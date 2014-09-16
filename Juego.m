@@ -113,6 +113,19 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         _gameStarted = NO;
         [self showStartGameLayer];
         
+        
+        
+        // Etiqueta puntos
+        //_puntos = 0;
+        _puntacion = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+        _puntacion.text = @"Puntos: 0";
+        _puntacion.fontSize = 24;
+        _puntacion.position = CGPointMake(self.size.width * 0.2f, self.size.height * 9/10);
+        _puntacion.zPosition = 5;
+        
+        [self addChild:_puntacion];
+
+        
     }
     return self;
 }
@@ -622,7 +635,8 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
              
              if (_score % 2 == 0)
              {
-                 NSLog(@"Resultado: %d", _score/2);
+                 //NSLog(@"Resultado: %d", _score/2);
+                 _puntacion.text = [NSString stringWithFormat:@"Puntos :%i", _score/2];
              }
              
              *stop = YES;    // Paramos de contar

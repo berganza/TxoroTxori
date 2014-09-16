@@ -8,6 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "Menu.h"
+
+#import <CoreMotion/CoreMotion.h>
+
 @interface Juego : SKScene
+
+@property SKLabelNode * puntacion;
+//@property int puntos;
 
 @end
