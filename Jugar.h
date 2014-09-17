@@ -18,6 +18,10 @@ typedef NS_ENUM(NSUInteger, StartGameLayerButtonType)
 
 @protocol StartGameLayerDelegate;
 @interface Jugar : CapaSuperpuesta
+
+@property SKSpriteNode * altavoz;
+@property int musicaBoton;
+
 @property (nonatomic, assign) id<StartGameLayerDelegate> delegate;
 @end
 
