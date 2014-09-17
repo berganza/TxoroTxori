@@ -15,27 +15,17 @@
 
 @implementation Menu
 
-- (void)didMoveToView: (SKView *) view
-{
-    if (!self.creacionDeEscena)
-    {
+- (void)didMoveToView: (SKView *) view {
+    
+    if (!self.creacionDeEscena) {
+        
         // Método propio
         [self crearContenidoDeEscena];
         self.creacionDeEscena = YES;
         
         [self startMusica];
-        
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 // Selector de método propio para incorporar a la escena el contenido
@@ -50,11 +40,6 @@
     [self addChild:self.tituloJuego];
     [self addChild:self.jugar];
     [self addChild:self.creditos];
-    
-    
-    
-    
-    
     
     
     //****************************************************
@@ -99,22 +84,7 @@
     
     //[titulo runAction:[SKAction repeatActionForever:animacion]];
     [titulo runAction:[SKAction repeatAction:animacion count:1]];
-    
-    
-    //    _tituloTextures = [NSMutableArray new];
-    //    for (NSString * name in arrayTexturas) {
-    //        SKTexture * texture = [tituloAtlas textureNamed:name];
-    //        [_tituloTextures addObject:texture];
-    
 }
-
-
-
-
-
-
-
-
 
 
 //****************************************************
@@ -127,6 +97,7 @@
     pantallaMenu.position = CGPointMake(CGRectGetMidX(self.frame) * 1/4,CGRectGetMidY(self.frame) * 1/3 - 60);
     return pantallaMenu;
 }
+
 - (SKLabelNode *)jugar {
     SKLabelNode *juego = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     juego.text = @"- Jugar";
@@ -135,6 +106,7 @@
     juego.name=@"juego";
     return juego;
 }
+
 - (SKLabelNode *) creditos {
     SKLabelNode * imagenCreditos = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     imagenCreditos.text = @"- Créditos";
@@ -143,7 +115,6 @@
     imagenCreditos.name = @"imagenCreditos";
     return imagenCreditos;
 }
-
 
 
 //****************************************************
@@ -163,7 +134,6 @@
 -(void) stopMusica {
     
     [musicaInicial stop];
-    
 }
 
 
@@ -177,7 +147,6 @@
     CGPoint tocarLabel = [toque locationInNode:self];
     SKNode * nodo = [self nodeAtPoint:tocarLabel];
     
-    
     if ([nodo.name isEqualToString:@"juego"]) {
         
         SKTransition * transicion = [SKTransition doorsOpenVerticalWithDuration:2];
@@ -185,9 +154,7 @@
         [self.view presentScene:escena1 transition: transicion];
         
         [self stopMusica];
-        
     }
-    
     
     if ([nodo.name isEqualToString:@"imagenCreditos"]) {
         
@@ -196,15 +163,7 @@
         [self.view presentScene:escena2 transition: transicion];
         
         [self stopMusica];
-        
     }
-    
 }
-
-
-
-
-
-
 
 @end

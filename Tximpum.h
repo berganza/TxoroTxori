@@ -8,21 +8,24 @@
 
 #import "CapaSuperpuesta.h"
 
-typedef NS_ENUM(NSUInteger, GameOverLayerButtonType)
-{
+typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
+    
     GameOverLayerPlayButton = 0
 };
 
 
-@protocol GameOverLayerDelegate;
+@protocol TximpumDelegate;
+
 @interface Tximpum : CapaSuperpuesta
-@property (nonatomic, assign) id<GameOverLayerDelegate> delegate;
+
+@property (nonatomic, retain) SKSpriteNode* retryButton;
+@property (nonatomic, assign) id<TximpumDelegate> delegate;
+
 @end
 
-
-//**********************************************************************
-@protocol GameOverLayerDelegate <NSObject>
+@protocol TximpumDelegate <NSObject>
 @optional
 
-- (void) gameOverLayer:(Tximpum*)sender tapRecognizedOnButton:(GameOverLayerButtonType) gameOverLayerButtonType;
+- (void) gameOverLayer:(Tximpum*)sender pulsarBoton:(BotonCapaTximpum) botonCapaTximpum;
+
 @end

@@ -9,25 +9,21 @@
 #import "Jugar.h"
 #import "Menu.h"
 
-    AVAudioPlayer * musicaPintxo;
-
-@interface Jugar()
-@property (nonatomic, retain) SKSpriteNode* playButton;
-@end
+AVAudioPlayer * musicaPintxo;
 
 @implementation Jugar
 
-- (id)initWithSize:(CGSize)size
-{
-    if(self = [super initWithSize:size])
-    {
-        SKSpriteNode* startGameText = [SKSpriteNode spriteNodeWithImageNamed:@"tituloTxori"];
+- (id)initWithSize:(CGSize)size {
+    
+    if(self = [super initWithSize:size]) {
+        
+        SKSpriteNode * startGameText = [SKSpriteNode spriteNodeWithImageNamed:@"tituloTxori"];
         startGameText.position = CGPointMake(size.width * 0.5f, size.height * 0.8f);
         [self addChild:startGameText];
         
-        SKSpriteNode* playButton = [SKSpriteNode spriteNodeWithImageNamed:@"botonPlay"];
-        playButton.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);
-        [self addChild:playButton];
+        SKSpriteNode * botonJugar = [SKSpriteNode spriteNodeWithImageNamed:@"botonPlay"];
+        botonJugar.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);
+        [self addChild:botonJugar];
         
         _altavoz = [SKSpriteNode spriteNodeWithImageNamed:@"altavoz1"];
         _altavoz.position = CGPointMake(size.width * 0.9f, size.height * 0.95f);
@@ -36,23 +32,23 @@
         
         [self addChild:_altavoz];
         
-        [self setPlayButton:playButton];
+        [self setBotonJugar:botonJugar];
     }
     
     return self;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode * nodo = [self nodeAtPoint:location];
     
-    if ([_playButton containsPoint:location])
-    {
-        if([self.delegate respondsToSelector:@selector(startGameLayer:tapRecognizedOnButton:)])
-        {
-            [self.delegate startGameLayer:self tapRecognizedOnButton:StartGameLayerPlayButton];
+    if ([_botonJugar containsPoint:location]) {
+        
+        if([self.delegate respondsToSelector:@selector(capaInicio:pulsarBoton:)]) {
+            
+            [self.delegate capaInicio:self pulsarBoton:BotonInicioPlay];
         }
     }
     
@@ -61,7 +57,7 @@
         if (_musicaBoton == 1) {
             _musicaBoton = 0;
             [self stopPintxo];
-            //[_altavoz removeFromParent];
+
         } else {
             _musicaBoton = 0;
             [self startPintxo];
@@ -71,7 +67,6 @@
 
 // Iniciar música
 -(void) startPintxo {
-    
     
     NSURL * rutaMusica = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Pintxo2" ofType:@"mp3"]];
     musicaPintxo = [[AVAudioPlayer alloc] initWithContentsOfURL:rutaMusica error:nil];
@@ -87,11 +82,6 @@
 -(void) stopPintxo {
     
     [musicaPintxo stop];
-    
 }
-
-
-
-
 
 @end

@@ -10,25 +10,25 @@
 
 
 
-typedef NS_ENUM(NSUInteger, StartGameLayerButtonType)
-{
-    StartGameLayerPlayButton = 0
+typedef NS_ENUM(NSUInteger, BotonInicio) {
+    
+    BotonInicioPlay = 0
 };
 
+@protocol GoazenDelegate;
 
-@protocol StartGameLayerDelegate;
 @interface Jugar : CapaSuperpuesta
 
+@property (nonatomic, retain) SKSpriteNode * botonJugar;
 @property SKSpriteNode * altavoz;
 @property int musicaBoton;
+@property (nonatomic, assign) id<GoazenDelegate> delegate;
 
-@property (nonatomic, assign) id<StartGameLayerDelegate> delegate;
 @end
 
-
-//**********************************************************************
-@protocol StartGameLayerDelegate <NSObject>
+@protocol GoazenDelegate <NSObject>
 @optional
 
-- (void) startGameLayer:(Jugar*)sender tapRecognizedOnButton:(StartGameLayerButtonType) startGameLayerButton;
+- (void) capaInicio:(Jugar*)sender pulsarBoton:(BotonInicio) botonInicio;
+
 @end
