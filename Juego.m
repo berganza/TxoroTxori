@@ -112,18 +112,6 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         _gameOver = NO;
         _gameStarted = NO;
         [self showStartGameLayer];
-        
-        
-        
-        // Etiqueta puntos
-        //_puntos = 0;
-        _puntacion = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
-        _puntacion.text = @"Puntos: 0";
-        _puntacion.fontSize = 24;
-        _puntacion.position = CGPointMake(self.size.width * 0.2f, self.size.height * 9/10);
-        _puntacion.zPosition = 5;
-        
-        [self addChild:_puntacion];
 
         
     }
