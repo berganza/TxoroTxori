@@ -496,9 +496,9 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     
     // Label puntuación
     _puntacion = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
-    _puntacion.text = @"Puntos: 0";
+    _puntacion.text = @" 0";
     _puntacion.fontSize = 24;
-    _puntacion.position = CGPointMake(self.size.width * 0.2f, self.size.height * 9/10);
+    _puntacion.position = CGPointMake(self.size.width /2, self.size.height * 9/10);
     _puntacion.zPosition = 5;
     
     [self addChild:_puntacion];
@@ -532,7 +532,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
             
             if (_puntos % 2 == 0) {
                 
-                _puntacion.text = [NSString stringWithFormat:@"Puntos :%i", _puntos/2];
+                _puntacion.text = [NSString stringWithFormat:@" %i", _puntos/2];
             }
             
             * stop = YES;    // Paramos de contar
