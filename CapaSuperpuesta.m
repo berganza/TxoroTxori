@@ -22,7 +22,7 @@
         SKSpriteNode * node = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1.0 alpha:0.0] size:size];
         node.anchorPoint = CGPointZero;
         [self addChild:node];
-        node.zPosition = -1;
+        node.zPosition = -10;
         node.name = @"transparent";
     }
     return self;

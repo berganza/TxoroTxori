@@ -17,9 +17,9 @@ AVAudioPlayer * musicaPintxo;
     
     if(self = [super initWithSize:size]) {
         
-        SKSpriteNode * startGameText = [SKSpriteNode spriteNodeWithImageNamed:@"tituloTxori"];
-        startGameText.position = CGPointMake(size.width * 0.5f, size.height * 0.8f);
-        [self addChild:startGameText];
+        SKSpriteNode * textoInicial = [SKSpriteNode spriteNodeWithImageNamed:@"tituloTxori"];
+        textoInicial.position = CGPointMake(size.width * 0.5f, size.height * 0.85f);
+        [self addChild:textoInicial];
         
         SKSpriteNode * botonJugar = [SKSpriteNode spriteNodeWithImageNamed:@"botonPlay"];
         botonJugar.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);

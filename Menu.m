@@ -90,16 +90,16 @@
 //****************************************************
 //*** Implementar Labels de Menu, Juego y Créditos ***
 //****************************************************
-- (SKLabelNode *)tituloJuego {
-    SKLabelNode *pantallaMenu = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+- (SKLabelNode *) tituloJuego {
+    SKLabelNode * pantallaMenu = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
     pantallaMenu.text = @"TxoroTxori ®";
     pantallaMenu.fontSize = 10;
     pantallaMenu.position = CGPointMake(CGRectGetMidX(self.frame) * 1/4,CGRectGetMidY(self.frame) * 1/3 - 60);
     return pantallaMenu;
 }
 
-- (SKLabelNode *)jugar {
-    SKLabelNode *juego = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
+- (SKLabelNode *) jugar {
+    SKLabelNode * juego = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     juego.text = @"Jokatu";
     juego.fontSize = 20;
     juego.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 3.5/6);

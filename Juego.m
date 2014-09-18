@@ -215,7 +215,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     
     _goazenCapa = [[Jugar alloc]initWithSize:self.size];
     _goazenCapa.userInteractionEnabled = YES;
-    _goazenCapa.zPosition = 150;
+    _goazenCapa.zPosition = 3;
     _goazenCapa.delegate = self;
 }
 
@@ -223,7 +223,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     
     _tximpumCapa = [[Tximpum alloc]initWithSize:self.size];
     _tximpumCapa.userInteractionEnabled = YES;
-    _tximpumCapa.zPosition = 200;
+    _tximpumCapa.zPosition = 5;
     _tximpumCapa.delegate = self;
 }
 
@@ -240,7 +240,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     }
     
     // Mover el nodo del pájaro al centro de la escena
-    self.txoroTxori.position = CGPointMake(self.imagenFondo.size.width * 0.5f, self.frame.size.height * 0.6f);
+    self.txoroTxori.position = CGPointMake(self.imagenFondo.size.width * 0.5f, self.frame.size.height * 0.65f);
     
     [_tximpumCapa removeFromParent];
     _txoroTxori.hidden = NO;
