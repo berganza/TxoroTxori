@@ -100,7 +100,7 @@
 
 - (SKLabelNode *)jugar {
     SKLabelNode *juego = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
-    juego.text = @"- Jugar";
+    juego.text = @"Jokatu";
     juego.fontSize = 20;
     juego.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 3.5/6);
     juego.name=@"juego";
@@ -109,7 +109,7 @@
 
 - (SKLabelNode *) creditos {
     SKLabelNode * imagenCreditos = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
-    imagenCreditos.text = @"- Créditos";
+    imagenCreditos.text = @"Kredituak";
     imagenCreditos.fontSize = 20;
     imagenCreditos.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 2/6);
     imagenCreditos.name = @"imagenCreditos";
