@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "altavozMute1.png"
+      "filename" : "altavoz-off@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "altavozMute1-1.png"
+      "filename" : "altavoz-off@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "altavozMute1-2.png"
+      "filename" : "altavoz-off@3x.png"
     }
   ],
   "info" : {

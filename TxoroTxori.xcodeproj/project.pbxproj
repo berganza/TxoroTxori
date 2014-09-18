@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A10942119CB628B0043BEA1 /* golpeTxori.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A10941F19CB628B0043BEA1 /* golpeTxori.mp3 */; };
+		9A10942219CB628B0043BEA1 /* Pintxo1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9A10942019CB628B0043BEA1 /* Pintxo1.mp3 */; };
 		9AA44C7319C8A43000CC31B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA44C7219C8A43000CC31B3 /* main.m */; };
 		9AA44C7619C8A43000CC31B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA44C7519C8A43000CC31B3 /* AppDelegate.m */; };
 		9AA44C7B19C8A43000CC31B3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9AA44C7A19C8A43000CC31B3 /* GameScene.sks */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A10941F19CB628B0043BEA1 /* golpeTxori.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = golpeTxori.mp3; sourceTree = "<group>"; };
+		9A10942019CB628B0043BEA1 /* Pintxo1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pintxo1.mp3; sourceTree = "<group>"; };
 		9AA44C6D19C8A43000CC31B3 /* TxoroTxori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TxoroTxori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA44C7119C8A43000CC31B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AA44C7219C8A43000CC31B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		9AA44CBC19C8A9F900CC31B3 /* Musica */ = {
 			isa = PBXGroup;
 			children = (
+				9A10941F19CB628B0043BEA1 /* golpeTxori.mp3 */,
+				9A10942019CB628B0043BEA1 /* Pintxo1.mp3 */,
 				9AA44CBA19C8A9CC00CC31B3 /* Pintxo2.mp3 */,
 				9AA44CC519C8AB4900CC31B3 /* TXORIA TXORI.mp3 */,
 				9AA44CC319C8AAA800CC31B3 /* EfectoPuerta.wav */,
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA44CC619C8AB4900CC31B3 /* TXORIA TXORI.mp3 in Resources */,
+				9A10942119CB628B0043BEA1 /* golpeTxori.mp3 in Resources */,
 				9AA44C8619C8A43000CC31B3 /* LaunchScreen.xib in Resources */,
 				9AA44CC419C8AAA800CC31B3 /* EfectoPuerta.wav in Resources */,
 				9AA44C8319C8A43000CC31B3 /* Images.xcassets in Resources */,
@@ -319,6 +326,7 @@
 				9AA44CB019C8A7D600CC31B3 /* titulo.atlas in Resources */,
 				9AA44CBB19C8A9CC00CC31B3 /* Pintxo2.mp3 in Resources */,
 				9AA44CB819C8A8DB00CC31B3 /* Default-568h@2x.png in Resources */,
+				9A10942219CB628B0043BEA1 /* Pintxo1.mp3 in Resources */,
 				9AA44C8119C8A43000CC31B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

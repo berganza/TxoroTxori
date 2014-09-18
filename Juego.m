@@ -8,7 +8,7 @@
 
 #import "Juego.h"
 
-AVAudioPlayer * musicaPintxo;
+    AVAudioPlayer * musicaPintxo;
 
 // Definición de constantes
 #define TIME 1.5
@@ -466,6 +466,10 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
         elemento2 = contact.bodyA;
     }
     
+    SKAction * sonido1 = [SKAction playSoundFileNamed:@"golpeTxori.mp3" waitForCompletion:YES];
+    
+    [self runAction:sonido1];
+    
     if ((elemento1.categoryBitMask & categoriaObstaculos) != 0 && (elemento2.categoryBitMask & categoriaTxori) != 0) {
         
         [self obstaculo:(SKSpriteNode *) elemento1.node colisionarConObstaculo:(SKSpriteNode *) elemento2.node];
@@ -474,6 +478,10 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
         
         [self txoroTxori:(SKSpriteNode *)elemento1.node colisionarConSuelo:(SKSpriteNode *)elemento2.node];
     }
+    
+    SKAction * sonido2 = [SKAction playSoundFileNamed:@"golpeTxori.mp3" waitForCompletion:YES];
+    
+    [self runAction:sonido2];
 }
 
 // Con este método conseguimos que el pájaro vuele cuando tocamos la pantalla.

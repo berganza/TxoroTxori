@@ -122,7 +122,7 @@
 //****************************************************
 -(void) startMusica {
     
-        NSURL * rutaMusica = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Pintxo2" ofType:@"mp3"]];
+        NSURL * rutaMusica = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Pintxo1" ofType:@"mp3"]];
         musicaInicial = [[AVAudioPlayer alloc] initWithContentsOfURL:rutaMusica error:nil];
     
         [musicaInicial prepareToPlay];

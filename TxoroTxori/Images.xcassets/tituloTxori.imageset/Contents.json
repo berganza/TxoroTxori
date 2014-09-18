@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "tituloTxori.png"
+      "filename" : "titulotxori@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "tituloTxori@2x.png"
+      "filename" : "titulotxori@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "tituloTxori-2.png"
+      "filename" : "titulotxori@3x.png"
     }
   ],
   "info" : {

@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "tximpum.png"
+      "filename" : "txinpum@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "tximpum@2x.png"
+      "filename" : "txinpum@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "tximpum@3x.png"
+      "filename" : "txinpum@3x.png"
     }
   ],
   "info" : {
