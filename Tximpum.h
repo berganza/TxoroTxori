@@ -8,6 +8,9 @@
 
 #import "CapaSuperpuesta.h"
 
+#import <AVFoundation/AVFoundation.h>
+
+
 typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
     
     GameOverLayerPlayButton = 0
@@ -16,9 +19,12 @@ typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
 
 @protocol TximpumDelegate;
 
-@interface Tximpum : CapaSuperpuesta
+@interface Tximpum : CapaSuperpuesta<SKSceneDelegate>
 
-@property (nonatomic, retain) SKSpriteNode* retryButton;
+@property (nonatomic, retain) SKSpriteNode * retryButton;
+
+@property int musicaBoton;
+
 @property (nonatomic, assign) id<TximpumDelegate> delegate;
 
 @end

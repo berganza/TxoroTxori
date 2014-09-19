@@ -24,12 +24,14 @@ AVAudioPlayer * musicaPintxo;
         
         SKSpriteNode * botonJugar = [SKSpriteNode spriteNodeWithImageNamed:@"botonPlay"];
         botonJugar.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);
+        [self setBotonJugar:botonJugar];
+        
+        [self addChild:self.volver];
+        
         [self addChild:botonJugar];
         
         
         [self altavozON];
-        
-        [self setBotonJugar:botonJugar];
     }
     
     return self;
@@ -38,7 +40,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozON {
     
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
-    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 520);
+    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 290);
     altavozON.zPosition = 500;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
@@ -48,7 +50,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozOFF {
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
-    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 520);
+    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 290);
     altavozOFF.zPosition = 500;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
@@ -57,6 +59,16 @@ AVAudioPlayer * musicaPintxo;
 }
 
 
+- (SKLabelNode *) volver {
+    SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
+    volver.text = @"volver";
+    volver.fontSize = 24;
+    volver.fontColor = [SKColor grayColor];
+    volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 290);
+    volver.name = @"volver";
+    volver.zPosition = 10;
+    return volver;
+}
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -65,6 +77,25 @@ AVAudioPlayer * musicaPintxo;
     CGPoint location = [touch locationInNode:self];
     SKNode * ON = [self nodeAtPoint:location];
     SKNode * OFF = [self nodeAtPoint:location];
+    SKNode * nodo = [self nodeAtPoint:location];
+    
+    
+    
+    if ([nodo.name isEqualToString:@"volver"]) {
+        
+        
+        SKTransition * efectoTransicion = [SKTransition doorsCloseVerticalWithDuration:2];
+        Menu * escena1 = [Menu sceneWithSize:self.scene.size];
+        [self.scene.view presentScene:escena1 transition: efectoTransicion];
+        
+        [self stopPintxo];
+        
+        SKAction * sonido = [SKAction playSoundFileNamed:@"EfectoPuerta.wav" waitForCompletion:YES];
+        [self runAction:sonido];
+    }
+
+
+    
     
     if ([_botonJugar containsPoint:location]) {
         

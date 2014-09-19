@@ -8,6 +8,7 @@
 
 #import "CapaSuperpuesta.h"
 
+#import <AVFoundation/AVFoundation.h>
 
 
 typedef NS_ENUM(NSUInteger, BotonInicio) {
@@ -17,12 +18,12 @@ typedef NS_ENUM(NSUInteger, BotonInicio) {
 
 @protocol GoazenDelegate;
 
-@interface Jugar : CapaSuperpuesta
+@interface Jugar : CapaSuperpuesta<SKSceneDelegate>
 
 @property (nonatomic, retain) SKSpriteNode * botonJugar;
-//@property SKSpriteNode * altavozON;
-//@property SKSpriteNode * altavozOFF;
+
 @property int musicaBoton;
+
 @property (nonatomic, assign) id<GoazenDelegate> delegate;
 
 @end

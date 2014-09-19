@@ -11,7 +11,7 @@
 #import "Tximpum.h"
 #import "Menu.h"
 
-@interface Juego : SKScene <SKPhysicsContactDelegate,GoazenDelegate,TximpumDelegate> {
+@interface Juego : SKScene <SKPhysicsContactDelegate, GoazenDelegate, TximpumDelegate> {
     
     // Declaramos variables privadas + setters y getters
     NSTimeInterval tiempo;
