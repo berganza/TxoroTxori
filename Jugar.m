@@ -61,7 +61,7 @@ AVAudioPlayer * musicaPintxo;
 
 - (SKLabelNode *) volver {
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"volver";
+    volver.text = @"itzuli";
     volver.fontSize = 24;
     volver.fontColor = [SKColor grayColor];
     volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 290);
