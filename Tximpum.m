@@ -89,7 +89,6 @@ AVAudioPlayer * musicaPintxo;
     
     if ([nodo.name isEqualToString:@"volver"]) {
         
-        
         SKTransition * efectoTransicion = [SKTransition doorsCloseVerticalWithDuration:2];
         Menu * escena1 = [Menu sceneWithSize:self.scene.size];
         [self.scene.view presentScene:escena1 transition: efectoTransicion];
@@ -105,9 +104,9 @@ AVAudioPlayer * musicaPintxo;
     
     if ([_retryButton containsPoint:location]) {
         
-        if([self.delegate respondsToSelector:@selector(gameOverLayer:pulsarBoton:)]) {
+        if([self.delegate respondsToSelector:@selector(delegadoFin:pulsarBoton:)]) {
             
-            [self.delegate gameOverLayer:self pulsarBoton:GameOverLayerPlayButton];
+            [self.delegate delegadoFin:self pulsarBoton:BotonFinPlay];
         }
     }
     

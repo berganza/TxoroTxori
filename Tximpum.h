@@ -13,7 +13,7 @@
 
 typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
     
-    GameOverLayerPlayButton = 0
+    BotonFinPlay = 0
 };
 
 
@@ -32,6 +32,6 @@ typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
 @protocol TximpumDelegate <NSObject>
 @optional
 
-- (void) gameOverLayer:(Tximpum*)sender pulsarBoton:(BotonCapaTximpum) botonCapaTximpum;
+- (void) delegadoFin:(Tximpum*)sender pulsarBoton:(BotonCapaTximpum) botonCapaTximpum;
 
 @end

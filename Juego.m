@@ -514,7 +514,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     [self startGame];
 }
 
-- (void)gameOverLayer:(Tximpum *)sender pulsarBoton:(BotonCapaTximpum)botonCapaTximpum {
+- (void)delegadoFin:(Tximpum *)sender pulsarBoton:(BotonCapaTximpum)botonCapaTximpum {
     
     _tximpum = NO;
     _goazen = NO;
