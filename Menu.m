@@ -46,7 +46,7 @@
     //*** Implementar imágenes y animaciones título ******
     //****************************************************
     SKSpriteNode * titulo = [[SKSpriteNode alloc] initWithImageNamed:@"txori1.png"];
-    titulo.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    titulo.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) * 1.3f);
     titulo.scale = 0.5;
     titulo.name = @"dibujoTitulo";
     
@@ -94,21 +94,23 @@
     SKLabelNode * pantallaMenu = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
     pantallaMenu.text = @"TxoroTxori ®";
     pantallaMenu.fontSize = 10;
-    pantallaMenu.position = CGPointMake(CGRectGetMidX(self.frame) * 1/4,CGRectGetMidY(self.frame) * 1/3 - 60);
+    pantallaMenu.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 1/3 - 60);
     return pantallaMenu;
 }
 
 - (SKLabelNode *) jugar {
-    SKLabelNode * juego = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
-    juego.text = @"Jokatu";
-    juego.fontSize = 20;
-    juego.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 3.5/6);
+    SKLabelNode * juego = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Bold"];
+    juego.text = @"Jolastu !";
+    juego.fontSize = 30;
+    juego.fontColor = [SKColor colorWithRed:1 green:0.65 blue:0 alpha:1];
+    
+    juego.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 0.8);
     juego.name=@"juego";
     return juego;
 }
 
 - (SKLabelNode *) creditos {
-    SKLabelNode * imagenCreditos = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
+    SKLabelNode * imagenCreditos = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     imagenCreditos.text = @"Kredituak";
     imagenCreditos.fontSize = 20;
     imagenCreditos.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 2/6);
