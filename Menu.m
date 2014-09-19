@@ -91,7 +91,7 @@
 //*** Implementar Labels de Menu, Juego y Créditos ***
 //****************************************************
 - (SKLabelNode *) tituloJuego {
-    SKLabelNode * pantallaMenu = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+    SKLabelNode * pantallaMenu = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     pantallaMenu.text = @"TxoroTxori ®";
     pantallaMenu.fontSize = 10;
     pantallaMenu.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) * 1/3 - 60);

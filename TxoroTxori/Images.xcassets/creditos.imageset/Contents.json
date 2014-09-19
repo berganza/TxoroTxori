@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "creditos.png"
+      "filename" : "creditos@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "creditos2.png"
+      "filename" : "creditos@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "creditos3.png"
+      "filename" : "creditos@3x.png"
     }
   ],
   "info" : {

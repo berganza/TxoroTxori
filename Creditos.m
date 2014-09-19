@@ -31,15 +31,22 @@ static NSString* const FONDO = @"creditos";
         
         SKAction * sonido = [SKAction playSoundFileNamed:@"EfectoPuerta.wav" waitForCompletion:YES];
         [self runAction:sonido];
-        
+
         [self startReproductor];
         
-        SKSpriteNode * imagen = [SKSpriteNode spriteNodeWithImageNamed:@"imagenCreditos.png"];
+        
+        SKSpriteNode * imagen = [SKSpriteNode spriteNodeWithImageNamed:@"imagenCreditos"];
         imagen.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        
-        
         imagen.zPosition = 1;
         [self addChild: imagen];
+        
+        
+        SKSpriteNode * sobreCreditos = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
+        sobreCreditos.position = CGPointMake (CGRectGetMinX(self.frame), CGRectGetMinY(self.frame));
+        //sobreCreditos.scene.scaleMode = SKSceneScaleModeAspectFit;
+        sobreCreditos.anchorPoint = CGPointMake(0, 0);
+        sobreCreditos.zPosition = 5;
+        [self addChild:sobreCreditos];
         
         
     }
@@ -48,12 +55,12 @@ static NSString* const FONDO = @"creditos";
 
 -(void) startReproductor {
     
-    NSURL * rutaMusica = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"TXORIA TXORI" ofType:@"mp3"]];
+    NSURL * rutaMusica = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Pintxo1" ofType:@"mp3"]];
     reproductor = [[AVAudioPlayer alloc] initWithContentsOfURL:rutaMusica error:nil];
     
     [reproductor prepareToPlay];
     
-    reproductor.numberOfLoops = 0;
+    reproductor.numberOfLoops = 2;
     [reproductor play];
 }
 
@@ -67,14 +74,14 @@ static NSString* const FONDO = @"creditos";
 
 
 
-- (SKLabelNode *)volver {
-    SKLabelNode *volver = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+- (SKLabelNode *) volver {
+    SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     volver.text = @"volver";
     volver.fontSize = 24;
     volver.fontColor = [SKColor grayColor];
-    volver.position = CGPointMake(CGRectGetMinX(self.frame)+50,CGRectGetMinY(self.frame)+50);
+    volver.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame) + 30);
     volver.name = @"volver";
-    volver.zPosition = 3;
+    volver.zPosition = 10;
     return volver;
     
 }
@@ -117,7 +124,7 @@ static NSString* const FONDO = @"creditos";
     
     [self enumerateChildNodesWithName:FONDO usingBlock:^(SKNode * node, BOOL *stop) {
         
-        node.position = CGPointMake(node.position.x, node.position.y + 10 * tiempo);
+        node.position = CGPointMake(node.position.x, node.position.y + 30 * tiempo);
         
         if (node.position.y < -(node.frame.size.height + 1)) {
             [node removeFromParent];
