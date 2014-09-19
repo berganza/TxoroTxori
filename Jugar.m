@@ -30,7 +30,6 @@ AVAudioPlayer * musicaPintxo;
         
         [self addChild:botonJugar];
         
-        
         [self altavozON];
     }
     
@@ -55,11 +54,10 @@ AVAudioPlayer * musicaPintxo;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
     [self addChild:altavozOFF];
-    
 }
 
-
 - (SKLabelNode *) volver {
+    
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     volver.text = @"itzuli";
     volver.fontSize = 18;
@@ -70,7 +68,6 @@ AVAudioPlayer * musicaPintxo;
     return volver;
 }
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch * touch = [touches anyObject];
@@ -79,10 +76,7 @@ AVAudioPlayer * musicaPintxo;
     SKNode * OFF = [self nodeAtPoint:location];
     SKNode * nodo = [self nodeAtPoint:location];
     
-    
-    
     if ([nodo.name isEqualToString:@"volver"]) {
-        
         
         SKTransition * efectoTransicion = [SKTransition doorsCloseVerticalWithDuration:2];
         Menu * escena1 = [Menu sceneWithSize:self.scene.size];
@@ -94,9 +88,6 @@ AVAudioPlayer * musicaPintxo;
         [self runAction:sonido];
     }
 
-
-    
-    
     if ([_botonJugar containsPoint:location]) {
         
         if([self.delegate respondsToSelector:@selector(capaInicio:pulsarBoton:)]) {

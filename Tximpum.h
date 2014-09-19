@@ -10,12 +10,10 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-
 typedef NS_ENUM(NSUInteger, BotonCapaTximpum) {
     
     BotonFinPlay = 0
 };
-
 
 @protocol TximpumDelegate;
 

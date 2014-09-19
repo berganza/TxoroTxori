@@ -32,7 +32,6 @@ AVAudioPlayer * musicaPintxo;
         
         [self setRetryButton:retryButton];
         
-        
         [self altavozON];
     }
     
@@ -57,10 +56,10 @@ AVAudioPlayer * musicaPintxo;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
     [self addChild:altavozOFF];
-    
 }
 
 - (SKLabelNode *) volver {
+    
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     volver.text = @"itzuli";
     volver.fontSize = 18;
@@ -70,9 +69,6 @@ AVAudioPlayer * musicaPintxo;
     volver.zPosition = 10;
     return volver;
 }
-
-
-
 
 // Detectamos el toque en el botón de Jugar, mandamos el mensaje de evento táctil a la escena del Juego y empezamos nuevo juego.
 
@@ -84,9 +80,7 @@ AVAudioPlayer * musicaPintxo;
     SKNode * OFF = [self nodeAtPoint:location];
     
     SKNode * nodo = [self nodeAtPoint:location];
-    
-    
-    
+ 
     if ([nodo.name isEqualToString:@"volver"]) {
         
         SKTransition * efectoTransicion = [SKTransition doorsCloseVerticalWithDuration:2];
@@ -99,9 +93,6 @@ AVAudioPlayer * musicaPintxo;
         [self runAction:sonido];
     }
 
-    
-    
-    
     if ([_retryButton containsPoint:location]) {
         
         if([self.delegate respondsToSelector:@selector(delegadoFin:pulsarBoton:)]) {
@@ -109,7 +100,6 @@ AVAudioPlayer * musicaPintxo;
             [self.delegate delegadoFin:self pulsarBoton:BotonFinPlay];
         }
     }
-    
     
     if ([ON.name isEqualToString:@"altavozON"]) {
         
@@ -134,7 +124,6 @@ AVAudioPlayer * musicaPintxo;
     }
 
 }
-
 
 // Iniciar música
 -(void) startPintxo {

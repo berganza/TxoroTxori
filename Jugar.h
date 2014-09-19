@@ -10,7 +10,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-
 typedef NS_ENUM(NSUInteger, BotonInicio) {
     
     BotonInicioPlay = 0
