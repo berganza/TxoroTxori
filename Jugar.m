@@ -40,7 +40,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozON {
     
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
-    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 290);
+    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
     altavozON.zPosition = 500;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
@@ -50,7 +50,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozOFF {
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
-    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 290);
+    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
     altavozOFF.zPosition = 500;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
@@ -62,9 +62,9 @@ AVAudioPlayer * musicaPintxo;
 - (SKLabelNode *) volver {
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     volver.text = @"itzuli";
-    volver.fontSize = 24;
+    volver.fontSize = 18;
     volver.fontColor = [SKColor grayColor];
-    volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 290);
+    volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 285);
     volver.name = @"volver";
     volver.zPosition = 10;
     return volver;
