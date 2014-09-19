@@ -8,6 +8,7 @@
 
 #import "Jugar.h"
 #import "Menu.h"
+#import "Juego.h"
 
 AVAudioPlayer * musicaPintxo;
 
@@ -25,12 +26,8 @@ AVAudioPlayer * musicaPintxo;
         botonJugar.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);
         [self addChild:botonJugar];
         
-        _altavoz = [SKSpriteNode spriteNodeWithImageNamed:@"altavoz1"];
-        _altavoz.position = CGPointMake(size.width * 0.9f, size.height * 0.95f);
-        _altavoz.name = @"altavoz";
-        _musicaBoton = 1;
         
-        [self addChild:_altavoz];
+        [self altavozON];
         
         [self setBotonJugar:botonJugar];
     }
@@ -38,11 +35,36 @@ AVAudioPlayer * musicaPintxo;
     return self;
 }
 
+-(void) altavozON {
+    
+    SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
+    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 520);
+    altavozON.zPosition = 500;
+    altavozON.name = @"altavozON";
+    _musicaBoton = 1;
+    [self addChild:altavozON];
+}
+
+-(void) altavozOFF {
+    
+    SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
+    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 520);
+    altavozOFF.zPosition = 500;
+    altavozOFF.name = @"altavozOFF";
+    _musicaBoton = 0;
+    [self addChild:altavozOFF];
+    
+}
+
+
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKNode * nodo = [self nodeAtPoint:location];
+    SKNode * ON = [self nodeAtPoint:location];
+    SKNode * OFF = [self nodeAtPoint:location];
     
     if ([_botonJugar containsPoint:location]) {
         
@@ -52,14 +74,24 @@ AVAudioPlayer * musicaPintxo;
         }
     }
     
-    if ([nodo.name isEqualToString:@"altavoz"]) {
+    if ([ON.name isEqualToString:@"altavozON"]) {
         
         if (_musicaBoton == 1) {
             _musicaBoton = 0;
+            
+            [self altavozOFF];
+            [ON removeFromParent];
             [self stopPintxo];
-
-        } else {
-            _musicaBoton = 0;
+        }
+    }
+    
+    if ([OFF.name isEqualToString:@"altavozOFF"]) {
+        
+        if (_musicaBoton == 0) {
+            _musicaBoton = 1;
+            
+            [self altavozON];
+            [OFF removeFromParent];
             [self startPintxo];
         }
     }

@@ -20,7 +20,8 @@ typedef NS_ENUM(NSUInteger, BotonInicio) {
 @interface Jugar : CapaSuperpuesta
 
 @property (nonatomic, retain) SKSpriteNode * botonJugar;
-@property SKSpriteNode * altavoz;
+//@property SKSpriteNode * altavozON;
+//@property SKSpriteNode * altavozOFF;
 @property int musicaBoton;
 @property (nonatomic, assign) id<GoazenDelegate> delegate;
 
