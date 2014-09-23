@@ -8,14 +8,24 @@
 
 #import "Creditos.h"
 
+
+@import SceneKit;
+@import SpriteKit;
+
 static NSString* const FONDO = @"creditos";
+
 
 @implementation Creditos
 
     AVAudioPlayer * reproductor;
 
+CGFloat anchuraEscena;
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        
+        anchuraEscena = size.width;
         
         
         //****************************
@@ -35,24 +45,66 @@ static NSString* const FONDO = @"creditos";
         [self startReproductor];
         
         
+        
+        
         SKSpriteNode * imagen = [SKSpriteNode spriteNodeWithImageNamed:@"imagenCreditos"];
         imagen.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        imagen.scale = 3.0;
+        //imagen.scale = 3.0;
+        imagen.size = self.size;
         imagen.zPosition = 1;
         [self addChild: imagen];
         
         
+        
+        
         SKSpriteNode * sobreCreditos = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
-        sobreCreditos.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        
+        sobreCreditos.anchorPoint = CGPointMake(0.5, 0);
+        sobreCreditos.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMinY(self.frame));
         //sobreCreditos.scene.scaleMode = SKSceneScaleModeAspectFit;
-        sobreCreditos.anchorPoint = CGPointMake(0, 0);
+        
+//        sobreCreditos.scale = 2.1;
+//        
+//        sobreCreditos.size = self.size;
+        
+        //sobreCreditos.scene.scaleMode = SKSceneScaleModeResizeFill;
         sobreCreditos.zPosition = 5;
         [self addChild:sobreCreditos];
+        
+        
+        
+        
+        // Inicializar fondo estático
+        //[self fondoEscena:size];
+        
         
         
     }
     return self;
 }
+
+
+
+// Inicializar fondo estático
+
+//- (void) fondoEscena:(CGSize) medidaEscena {
+//    
+//    self.imagenCre = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
+//    self.imagenCre.size = medidaEscena;
+//    //self.imagenCre.position = CGPointMake(self.imagenCre.size.width/2, self.frame.size.height/2);
+//    
+//    
+//    _imagenCre.anchorPoint = CGPointMake(0, 0);
+//    
+//    _imagenCre.size = self.imagenCre.size;
+//    self.imagenCre.zPosition = 5;
+//    [self addChild:self.imagenCre];
+//}
+
+
+
+
+
 
 -(void) startReproductor {
     
@@ -77,7 +129,7 @@ static NSString* const FONDO = @"creditos";
 
 - (SKLabelNode *) volver {
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"Itzuli";
+    volver.text = @"itzuli";
     volver.fontSize = 24;
     volver.fontColor = [SKColor grayColor];
     volver.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame) + 30);

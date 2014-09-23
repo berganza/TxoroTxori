@@ -67,7 +67,7 @@ CGFloat anchuraEscena;
 - (SKLabelNode *) volver {
     
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"Itzuli";
+    volver.text = @"itzuli";
     volver.fontSize = 18;
     volver.fontColor = [SKColor grayColor];
     volver.position = CGPointMake((anchuraEscena * 0.5) - (anchuraEscena * 0.5/2), alturaEscena * 0.5);

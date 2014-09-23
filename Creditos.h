@@ -16,4 +16,8 @@
 @property (nonatomic, assign) CFTimeInterval tiempoTranscurrido;
 @property (nonatomic, strong) SKSpriteNode * escena;
 
+
+@property (nonatomic) SKSpriteNode * imagenCre;
+
+
 @end
