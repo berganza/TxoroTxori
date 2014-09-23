@@ -77,7 +77,7 @@ static NSString* const FONDO = @"creditos";
 
 - (SKLabelNode *) volver {
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"volver";
+    volver.text = @"Itzuli";
     volver.fontSize = 24;
     volver.fontColor = [SKColor grayColor];
     volver.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMinY(self.frame) + 30);
