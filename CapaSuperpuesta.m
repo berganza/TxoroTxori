@@ -19,11 +19,11 @@
     self = [super init];
     if (self)
     {
-        SKSpriteNode * node = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1.0 alpha:0.0] size:size];
-        node.anchorPoint = CGPointZero;
-        [self addChild:node];
-        node.zPosition = -10;
-        node.name = @"transparent";
+        SKSpriteNode * nodo = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1.0 alpha:0.0] size:size];
+        nodo.anchorPoint = CGPointZero;
+        [self addChild:nodo];
+        nodo.zPosition = -10;
+        nodo.name = @"transparent";
     }
     return self;
 }

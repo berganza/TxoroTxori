@@ -239,13 +239,14 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
         }
     }
     
-    // Mover el nodo del pájaro al centro de la escena
+        // Mover el nodo del pájaro al centro de la escena
     self.txoroTxori.position = CGPointMake(self.imagenFondo.size.width * 0.5f, self.frame.size.height * 0.65f);
     
-    [_tximpumCapa removeFromParent];
-    _txoroTxori.hidden = NO;
+    
     [self volarTxori];
     [self addChild:_goazenCapa];
+    [_tximpumCapa removeFromParent];
+    _txoroTxori.hidden = NO;
 }
 
 - (void) finJuego {

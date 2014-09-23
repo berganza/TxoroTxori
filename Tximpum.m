@@ -48,7 +48,7 @@ CGFloat anchuraEscena;
     
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
     altavozON.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
-    altavozON.zPosition = 500;
+    altavozON.zPosition = 50;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
     [self addChild:altavozON];
@@ -58,7 +58,7 @@ CGFloat anchuraEscena;
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
     altavozOFF.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
-    altavozOFF.zPosition = 500;
+    altavozOFF.zPosition = 50;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
     [self addChild:altavozOFF];
@@ -80,7 +80,7 @@ CGFloat anchuraEscena;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    UITouch *touch = [touches anyObject];
+    UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode * ON = [self nodeAtPoint:location];
     SKNode * OFF = [self nodeAtPoint:location];

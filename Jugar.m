@@ -17,7 +17,6 @@ CGFloat anchuraEscena;
 @implementation Jugar
 
 
-
 - (id)initWithSize:(CGSize)size {
     
     if(self = [super initWithSize:size]) {
@@ -49,7 +48,7 @@ CGFloat anchuraEscena;
     altavozON.anchorPoint = CGPointMake(0.5, 0.5);
     altavozON.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
 
-    altavozON.zPosition = 500;
+    altavozON.zPosition = 50;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
     [self addChild:altavozON];
@@ -58,7 +57,7 @@ CGFloat anchuraEscena;
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
     altavozOFF.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
-    altavozOFF.zPosition = 500;
+    altavozOFF.zPosition = 50;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
     [self addChild:altavozOFF];
