@@ -37,12 +37,13 @@ static NSString* const FONDO = @"creditos";
         
         SKSpriteNode * imagen = [SKSpriteNode spriteNodeWithImageNamed:@"imagenCreditos"];
         imagen.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        imagen.scale = 3.0;
         imagen.zPosition = 1;
         [self addChild: imagen];
         
         
         SKSpriteNode * sobreCreditos = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
-        sobreCreditos.position = CGPointMake (CGRectGetMinX(self.frame), CGRectGetMinY(self.frame));
+        sobreCreditos.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         //sobreCreditos.scene.scaleMode = SKSceneScaleModeAspectFit;
         sobreCreditos.anchorPoint = CGPointMake(0, 0);
         sobreCreditos.zPosition = 5;

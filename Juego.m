@@ -115,7 +115,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
 
 -(void) fondoScroll {
     
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 600; i++) {
         
         SKSpriteNode * imagenScroll = [SKSpriteNode spriteNodeWithImageNamed:@"fondoScroll"];
         imagenScroll.zPosition = 100;

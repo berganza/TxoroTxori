@@ -33,6 +33,7 @@
     
     //self.backgroundColor = [SKColor blueColor];
     SKSpriteNode * fondo =[SKSpriteNode spriteNodeWithImageNamed:@"fondoInicio.png"];
+    fondo.scale= 3.0;
     fondo.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     [self addChild:fondo];
     

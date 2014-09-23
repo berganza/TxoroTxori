@@ -11,12 +11,19 @@
 #import "Juego.h"
 
 AVAudioPlayer * musicaPintxo;
+CGFloat alturaEscena;
+CGFloat anchuraEscena;
 
 @implementation Jugar
+
+
 
 - (id)initWithSize:(CGSize)size {
     
     if(self = [super initWithSize:size]) {
+        
+        alturaEscena = size.height;
+        anchuraEscena = size.width;
         
         SKSpriteNode * textoInicial = [SKSpriteNode spriteNodeWithImageNamed:@"tituloTxori"];
         textoInicial.position = CGPointMake(size.width * 0.5f, size.height * 0.85f);
@@ -39,17 +46,18 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozON {
     
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
-    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
+    altavozON.anchorPoint = CGPointMake(0.5, 0.5);
+    altavozON.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
+
     altavozON.zPosition = 500;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
     [self addChild:altavozON];
 }
-
 -(void) altavozOFF {
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
-    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
+    altavozOFF.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
     altavozOFF.zPosition = 500;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
@@ -59,10 +67,10 @@ AVAudioPlayer * musicaPintxo;
 - (SKLabelNode *) volver {
     
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"itzuli";
+    volver.text = @"Itzuli";
     volver.fontSize = 18;
     volver.fontColor = [SKColor grayColor];
-    volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 285);
+    volver.position = CGPointMake((anchuraEscena * 0.5) - (anchuraEscena * 0.5/2), alturaEscena * 0.5);
     volver.name = @"volver";
     volver.zPosition = 10;
     return volver;

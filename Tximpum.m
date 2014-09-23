@@ -12,6 +12,9 @@
 
 AVAudioPlayer * musicaPintxo;
 
+CGFloat alturaEscena;
+CGFloat anchuraEscena;
+
 @implementation Tximpum
 
 // Subclase Tximpum de CapaOverlay y añadimos un nodo con texto "Tximpum" y el botón para volver a jugar.
@@ -20,12 +23,15 @@ AVAudioPlayer * musicaPintxo;
     
     if(self = [super initWithSize:size]) {
         
+        alturaEscena = size.height;
+        anchuraEscena = size.width;
+        
         SKSpriteNode* startGameText = [SKSpriteNode spriteNodeWithImageNamed:@"tximpum"];
         startGameText.position = CGPointMake(size.width * 0.5f, size.height * 0.8f);
         [self addChild:startGameText];
         
         SKSpriteNode* retryButton = [SKSpriteNode spriteNodeWithImageNamed:@"botonPlay"];
-        retryButton.position = CGPointMake(size.width * 0.5f, size.height * 0.50f);
+        retryButton.position = CGPointMake(size.width * 0.50f, size.height * 0.50f);
         [self addChild:retryButton];
         
         [self addChild:self.volver];
@@ -41,7 +47,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozON {
     
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
-    altavozON.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
+    altavozON.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
     altavozON.zPosition = 500;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
@@ -51,7 +57,7 @@ AVAudioPlayer * musicaPintxo;
 -(void) altavozOFF {
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];
-    altavozOFF.position =  CGPointMake(CGRectGetMidX(self.frame) + 280, CGRectGetMidY(self.frame) + 292);
+    altavozOFF.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
     altavozOFF.zPosition = 500;
     altavozOFF.name = @"altavozOFF";
     _musicaBoton = 0;
@@ -61,10 +67,10 @@ AVAudioPlayer * musicaPintxo;
 - (SKLabelNode *) volver {
     
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
-    volver.text = @"itzuli";
+    volver.text = @"Itzuli";
     volver.fontSize = 18;
     volver.fontColor = [SKColor grayColor];
-    volver.position = CGPointMake(CGRectGetMidX(self.frame) + 50, CGRectGetMidY(self.frame) + 285);
+    volver.position = CGPointMake((anchuraEscena * 0.5) - (anchuraEscena * 0.5/2), alturaEscena * 0.5);
     volver.name = @"volver";
     volver.zPosition = 10;
     return volver;
