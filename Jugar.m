@@ -10,12 +10,12 @@
 #import "Menu.h"
 #import "Juego.h"
 
-AVAudioPlayer * musicaPintxo;
+    AVAudioPlayer * musicaPintxo;
+
 CGFloat alturaEscena;
 CGFloat anchuraEscena;
 
 @implementation Jugar
-
 
 - (id)initWithSize:(CGSize)size {
     
@@ -47,12 +47,12 @@ CGFloat anchuraEscena;
     SKSpriteNode * altavozON = [SKSpriteNode spriteNodeWithImageNamed:@"altavozON"];
     altavozON.anchorPoint = CGPointMake(0.5, 0.5);
     altavozON.position =  CGPointMake((anchuraEscena * 0.5) + (anchuraEscena * 0.5/2), alturaEscena * 0.5);
-
     altavozON.zPosition = 50;
     altavozON.name = @"altavozON";
     _musicaBoton = 1;
     [self addChild:altavozON];
 }
+
 -(void) altavozOFF {
     
     SKSpriteNode * altavozOFF = [SKSpriteNode spriteNodeWithImageNamed:@"altavozOFF"];

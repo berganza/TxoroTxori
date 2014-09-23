@@ -71,7 +71,6 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
         _tximpum = NO;
         _goazen = NO;
         [self comenzarJuego];
-        
     }
     return self;
 }
@@ -241,7 +240,6 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
     
         // Mover el nodo del pájaro al centro de la escena
     self.txoroTxori.position = CGPointMake(self.imagenFondo.size.width * 0.5f, self.frame.size.height * 0.65f);
-    
     
     [self volarTxori];
     [self addChild:_goazenCapa];
@@ -467,7 +465,7 @@ static inline CGPoint PuntoParaEscalar(const CGPoint a, const CGFloat b) {
         elemento2 = contact.bodyA;
     }
     
-    SKAction * sonido1 = [SKAction playSoundFileNamed:@"golpeTxori.mp3" waitForCompletion:YES];
+    SKAction * sonido1 = [SKAction playSoundFileNamed:@"golpeTxori.mp3" waitForCompletion:NO];
     
     [self runAction:sonido1];
     

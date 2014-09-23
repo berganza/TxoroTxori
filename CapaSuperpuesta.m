@@ -14,16 +14,16 @@
 // Creamos un SKNode y lo añadimos como hijo de la vista de la escena del juego
 // Para ello, creamos una capa de superposición (overlay) y le añadimos un nodo transparente como hijo
 
-- (id)initWithSize:(CGSize)size
-{
+- (id)initWithSize:(CGSize)size {
+    
     self = [super init];
-    if (self)
-    {
+    if (self) {
+        
         SKSpriteNode * nodo = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1.0 alpha:0.0] size:size];
         nodo.anchorPoint = CGPointZero;
         [self addChild:nodo];
         nodo.zPosition = -10;
-        nodo.name = @"transparent";
+        nodo.name = @"transparente";
     }
     return self;
 }

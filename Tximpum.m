@@ -10,7 +10,7 @@
 #import "Menu.h"
 #import "Juego.h"
 
-AVAudioPlayer * musicaPintxo;
+    AVAudioPlayer * musicaPintxo;
 
 CGFloat alturaEscena;
 CGFloat anchuraEscena;
@@ -40,7 +40,6 @@ CGFloat anchuraEscena;
         
         [self altavozON];
     }
-    
     return self;
 }
 

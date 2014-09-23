@@ -8,10 +8,6 @@
 
 #import "Creditos.h"
 
-
-@import SceneKit;
-@import SpriteKit;
-
 static NSString* const FONDO = @"creditos";
 
 
@@ -19,13 +15,8 @@ static NSString* const FONDO = @"creditos";
 
     AVAudioPlayer * reproductor;
 
-CGFloat anchuraEscena;
-
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
-        
-        anchuraEscena = size.width;
         
         
         //****************************
@@ -34,77 +25,31 @@ CGFloat anchuraEscena;
         self.escena = [self fondoCreditos];
         [self addChild:self.escena];
         
-        
         [self addChild:self.volver];
-        
-        
         
         SKAction * sonido = [SKAction playSoundFileNamed:@"EfectoPuerta.wav" waitForCompletion:YES];
         [self runAction:sonido];
 
         [self startReproductor];
         
-        
-        
-        
         SKSpriteNode * imagen = [SKSpriteNode spriteNodeWithImageNamed:@"imagenCreditos"];
         imagen.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        //imagen.scale = 3.0;
         imagen.size = self.size;
         imagen.zPosition = 1;
         [self addChild: imagen];
-        
-        
         
         
         SKSpriteNode * sobreCreditos = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
         
         sobreCreditos.anchorPoint = CGPointMake(0.5, 0);
         sobreCreditos.position = CGPointMake (CGRectGetMidX(self.frame), CGRectGetMinY(self.frame));
-        //sobreCreditos.scene.scaleMode = SKSceneScaleModeAspectFit;
-        
-//        sobreCreditos.scale = 2.1;
-//        
-//        sobreCreditos.size = self.size;
-        
-        //sobreCreditos.scene.scaleMode = SKSceneScaleModeResizeFill;
         sobreCreditos.zPosition = 5;
         [self addChild:sobreCreditos];
-        
-        
-        
-        
-        // Inicializar fondo estático
-        //[self fondoEscena:size];
-        
-        
+
         
     }
     return self;
 }
-
-
-
-// Inicializar fondo estático
-
-//- (void) fondoEscena:(CGSize) medidaEscena {
-//    
-//    self.imagenCre = [SKSpriteNode spriteNodeWithImageNamed:@"sobreCreditos"];
-//    self.imagenCre.size = medidaEscena;
-//    //self.imagenCre.position = CGPointMake(self.imagenCre.size.width/2, self.frame.size.height/2);
-//    
-//    
-//    _imagenCre.anchorPoint = CGPointMake(0, 0);
-//    
-//    _imagenCre.size = self.imagenCre.size;
-//    self.imagenCre.zPosition = 5;
-//    [self addChild:self.imagenCre];
-//}
-
-
-
-
-
 
 -(void) startReproductor {
     
@@ -124,9 +69,6 @@ CGFloat anchuraEscena;
     
 }
 
-
-
-
 - (SKLabelNode *) volver {
     SKLabelNode * volver = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
     volver.text = @"itzuli";
@@ -136,9 +78,7 @@ CGFloat anchuraEscena;
     volver.name = @"volver";
     volver.zPosition = 10;
     return volver;
-    
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch * toque = [touches anyObject];
@@ -146,7 +86,6 @@ CGFloat anchuraEscena;
     SKNode * nodo = [self nodeAtPoint:tocarLabel];
     
     if ([nodo.name isEqualToString:@"volver"]) {
-        
         
         SKTransition * efectoTransicion = [SKTransition doorsCloseVerticalWithDuration:2];
         Menu * escena1 = [Menu sceneWithSize:self.frame.size];
@@ -158,9 +97,6 @@ CGFloat anchuraEscena;
         [self runAction:sonido];
     }
 }
-
-
-
 
 -(void)update:(CFTimeInterval)tiempoActual {
     //****************************
@@ -196,7 +132,6 @@ CGFloat anchuraEscena;
     background.position = CGPointMake(0, -900);
     background.name = FONDO;
     background.zPosition = 2;
-    
     
     return background;
 }
